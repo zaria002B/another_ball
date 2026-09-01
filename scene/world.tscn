@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://csuj5gbta14t6"]
+
+[ext_resource type="PackedScene" uid="uid://bhhr104rokkmd" path="res://scene/ball.tscn" id="1_pjass"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r8tjs"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_pjass"]
+sky_material = SubResource("ProceduralSkyMaterial_r8tjs")
+
+[sub_resource type="Environment" id="Environment_txmk2"]
+background_mode = 2
+sky = SubResource("Sky_pjass")
+glow_enabled = true
+
+[node name="world" type="Node3D" unique_id=1397216513]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=123351517]
+environment = SubResource("Environment_txmk2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=535568562]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=388418661]
+transform = Transform3D(18.198484, 0, 0, 0, 1, 0, 0, 0, 18.278168, 0, 0, 0)
+use_collision = true
+
+[node name="ball" parent="." unique_id=111916459 instance=ExtResource("1_pjass")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6283314, 2.3107595, -0.8517672)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=520368058]
+transform = Transform3D(1, 0, 0, 0, 0.9450287, 0.32698733, 0, -0.32698733, 0.9450287, -0.6283314, 6.577344, 4.8766384)
+
+[editable path="ball"]
