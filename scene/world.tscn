@@ -27,10 +27,5 @@ shadow_enabled = true
 transform = Transform3D(18.198484, 0, 0, 0, 1, 0, 0, 0, 18.278168, 0, 0, 0)
 use_collision = true
 
-[node name="ball" parent="." unique_id=111916459 instance=ExtResource("1_pjass")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6283314, 2.3107595, -0.8517672)
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=520368058]
-transform = Transform3D(1, 0, 0, 0, 0.9450287, 0.32698733, 0, -0.32698733, 0.9450287, -0.6283314, 6.577344, 4.8766384)
-
-[editable path="ball"]
+[node name="PlayerRig" parent="." unique_id=1707817328 instance=ExtResource("1_pjass")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22262096, 2.5156622, 1.4322519)
