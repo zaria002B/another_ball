@@ -12,7 +12,7 @@ extends RigidBody3D
 
 @export_group("Movement")
 @export var move_force: float = 18.0        # how hard we push the ball to roll
-@export var max_speed: float = 9.0          # cap on horizontal speed
+@export var max_speed: float = 10.0          # cap on horizontal speed
 @export var air_control_multiplier: float = 0.3  # reduced force while airborne
 
 @export_group("Jumping")

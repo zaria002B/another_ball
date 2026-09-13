@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://btje7wdeqvntj"]
+
+[ext_resource type="PackedScene" uid="uid://bdmf8n7qah8b1" path="res://scene/ball.tscn" id="1_tw77e"]
+[ext_resource type="PackedScene" uid="uid://dlwvq7nuu6we8" path="res://scene/death_zone.tscn" id="2_rpurj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tw77e"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_rpurj"]
+sky_material = SubResource("ProceduralSkyMaterial_tw77e")
+
+[sub_resource type="Environment" id="Environment_3flxk"]
+background_mode = 2
+sky = SubResource("Sky_rpurj")
+glow_enabled = true
+
+[node name="Level_1" type="Node3D" unique_id=453008999]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1887986601]
+environment = SubResource("Environment_3flxk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=240708260]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=38185562]
+transform = Transform3D(2.046145, 0, 0, 0, 1, 0, 0, 0, 11.803846, 0, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1630719184]
+transform = Transform3D(4.2126904, 0, 0, 0, 1, 0, 0, 0, 4.334571, 0, 0, -10.611393)
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1406128428]
+transform = Transform3D(4.2126904, 0, 0, 0, 1, 0, 0, 0, 4.2656465, 4.3163548, 0, -18.143055)
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=413052805]
+transform = Transform3D(4.2126904, 0, 0, 0, 1, 0, 0, 0, 5.164595, 0, 0, -26.354822)
+use_collision = true
+
+[node name="PlayerRig" parent="." unique_id=2081120247 instance=ExtResource("1_tw77e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03803587, 1.4168279, 4.8204036)
+
+[node name="DeathZone" parent="." unique_id=26558989 instance=ExtResource("2_rpurj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -3, 1)

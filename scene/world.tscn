@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://csuj5gbta14t6"]
 
-[ext_resource type="PackedScene" uid="uid://bhhr104rokkmd" path="res://scene/ball.tscn" id="1_pjass"]
+[ext_resource type="PackedScene" uid="uid://bdmf8n7qah8b1" path="res://scene/ball.tscn" id="1_pjass"]
+[ext_resource type="PackedScene" uid="uid://b4sybykoukooq" path="res://scene/barrel.tscn" id="2_txmk2"]
+[ext_resource type="PackedScene" uid="uid://dlwvq7nuu6we8" path="res://scene/death_zone.tscn" id="3_w4qq1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r8tjs"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,12 +22,33 @@ glow_enabled = true
 environment = SubResource("Environment_txmk2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=535568562]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 11.062218, 0, 0)
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=388418661]
-transform = Transform3D(18.198484, 0, 0, 0, 1, 0, 0, 0, 18.278168, 0, 0, 0)
+transform = Transform3D(30.423721, 0, 0, 0, 1, 0, 0, 0, 18.278168, 6.1055756, 0, 0)
 use_collision = true
 
 [node name="PlayerRig" parent="." unique_id=1707817328 instance=ExtResource("1_pjass")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22262096, 2.5156622, 1.4322519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -174.99074, 132.75168, 1.4322519)
+
+[node name="DeathZone" parent="." unique_id=26558989 instance=ExtResource("3_w4qq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.787485, -3.2002282, 2.6205387)
+
+[node name="barrel" parent="." unique_id=725988348 instance=ExtResource("2_txmk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.752733, 0.5910677, 1.1473653)
+
+[node name="barrel2" parent="." unique_id=182455473 instance=ExtResource("2_txmk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.951397, 0.5000001, -0.96897316)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="." unique_id=1169281191]
+transform = Transform3D(-2.4486573, 354.85236, 0, -2.9778702, -291.78967, 0, 0, 0, 3.8553383, -86.6635, 69.38284, 0)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=643187787]
+transform = Transform3D(-0.12149439, 0.9999777, 0, -18.198078, -0.0066760713, 0, 0, 0, 18.278168, 20.700886, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=514536894]
+transform = Transform3D(18.198484, 0, 0, 0, 1, 0, 0, 0, 18.278168, -169.62207, 128.4137, 0)
+use_collision = true
